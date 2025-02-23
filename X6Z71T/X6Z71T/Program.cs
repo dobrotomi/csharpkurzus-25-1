@@ -1,7 +1,10 @@
-﻿internal class Program
+﻿using X6Z71T.UI;
+
+internal class Program
 {
     private static void Main(string[] args)
     {
-        Console.WriteLine("Hello, World!");
+        Ui ui = new Ui();
+        ui.Run();
     }
 }
