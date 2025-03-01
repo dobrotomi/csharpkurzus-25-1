@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace X6Z71T.Task;
+namespace X6Z71T.Tasks;
 internal class TaskManager : ITaskManager
 {
     private static readonly Lazy<TaskManager> _instance = new(() => new TaskManager());
@@ -17,14 +17,19 @@ internal class TaskManager : ITaskManager
         _tasks.Add(task with { Id = _id++ });
     }
 
+    public void SetTasks(List<TaskItem> tasks)
+    {
+        _tasks = tasks;
+    }
+
     public int CountCompletedTasks()
     {
         return _tasks.Count(t => t.IsCompleted);
     }
 
-    public void DeleteTask(int id)
+    public int DeleteTask(int id)
     {
-        _tasks.RemoveAll(t => t.Id == id);
+        return _tasks.RemoveAll(t => t.Id == id);
     }
 
     public bool CompleteTask(int id)
@@ -47,5 +52,10 @@ internal class TaskManager : ITaskManager
     public IEnumerable<TaskItem> GetTasks()
     {
         return _tasks;
+    }
+
+    public TaskItem? GetTask(int id)
+    {
+        return _tasks.FirstOrDefault(t => t.Id == id);
     }
 }

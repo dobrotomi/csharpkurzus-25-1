@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using X6Z71T.Tasks;
+
 namespace X6Z71T.Commands;
 internal class DelTaskCommand : ICommand
 {
@@ -14,6 +16,23 @@ internal class DelTaskCommand : ICommand
 
     public void Run(string[] args)
     {
-        throw new NotImplementedException();
+        var taskManager = TaskManager.Instance;
+
+        if (int.TryParse(args[1], out int id))
+        {
+            int res = taskManager.DeleteTask(id);
+            if (res > 0)
+            {
+                Console.WriteLine("Feladat törölve!");
+            }
+            else
+            {
+                Console.WriteLine("Nem található a megadott azonosítóval feladat!");
+            }
+        }
+        else
+        {
+            Console.WriteLine("Hibás paraméterek!");
+        }
     }
 }

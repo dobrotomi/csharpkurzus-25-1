@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using X6Z71T.Task;
+using X6Z71T.Tasks;
 
 namespace X6Z71T.Commands;
 internal class ComplateTaskCommand : ICommand

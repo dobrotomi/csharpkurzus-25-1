@@ -1,4 +1,4 @@
-﻿using X6Z71T.Task;
+﻿using X6Z71T.Tasks;
 
 namespace X6Z71T.Commands;
 internal class AddTaskCommand : ICommand
@@ -41,7 +41,7 @@ internal class AddTaskCommand : ICommand
             break;
         }
 
-        var newTask = X6Z71T.Task.TaskFactory.CreateTask(title, description);
+        var newTask = X6Z71T.Tasks.TaskFactory.CreateTask(title, description);
 
         taskManager.AddTask(newTask);
 

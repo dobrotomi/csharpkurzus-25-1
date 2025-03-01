@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace X6Z71T.Task;
+namespace X6Z71T.Tasks;
 public record class TaskItem
 {
     public int Id { get; init; }
