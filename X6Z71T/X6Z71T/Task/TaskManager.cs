@@ -9,12 +9,12 @@ internal class TaskManager : ITaskManager
 {
     private static readonly Lazy<TaskManager> _instance = new(() => new TaskManager());
     public static TaskManager Instance => _instance.Value;
-    private List<TaskItem> _tasks = new List<TaskItem>();
-    private int _Id = 1;
+    private List<TaskItem> _tasks = [];
+    private int _id = 1;
     private TaskManager() { }
     public void AddTask(TaskItem task)
     {
-        _tasks.Add(task with { Id = _Id++ });
+        _tasks.Add(task with { Id = _id++ });
     }
 
     public int CountCompletedTasks()
@@ -25,6 +25,18 @@ internal class TaskManager : ITaskManager
     public void DeleteTask(int id)
     {
         _tasks.RemoveAll(t => t.Id == id);
+    }
+
+    public bool CompleteTask(int id)
+    {
+        var task = _tasks.FirstOrDefault(t => t.Id == id);
+        if (task is not null && !task.IsCompleted)
+        {
+            _tasks.Remove(task);
+            _tasks.Add(task with { IsCompleted = true });
+            return true;
+        }
+        return false;
     }
 
     public IEnumerable<TaskItem> GetCompletedTasks()

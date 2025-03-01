@@ -11,6 +11,7 @@ internal class ExitCommand : ICommand
 
     public string Description => "Program bezárása.";
 
+
     public void Run(string[] args)
     {
         Console.WriteLine("Viszlát!");

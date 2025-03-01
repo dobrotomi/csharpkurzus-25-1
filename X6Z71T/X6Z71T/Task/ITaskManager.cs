@@ -9,6 +9,7 @@ internal interface ITaskManager
 {
     void AddTask(TaskItem task);
     void DeleteTask(int id);
+    bool CompleteTask(int id);
     IEnumerable<TaskItem> GetTasks();
     IEnumerable<TaskItem> GetCompletedTasks();
     int CountCompletedTasks();

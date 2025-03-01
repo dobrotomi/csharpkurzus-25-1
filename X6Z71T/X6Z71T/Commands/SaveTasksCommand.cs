@@ -5,12 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace X6Z71T.Commands;
-internal class DelTaskCommand : ICommand
+internal class SaveTasksCommand : ICommand
 {
-    public string Name => "delete";
+    public string Name => "save";
 
-    public string Description => "Feladat törlése.";
-
+    public string Description => "Feladatok mentése.";
 
     public void Run(string[] args)
     {

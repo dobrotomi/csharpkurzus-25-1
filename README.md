@@ -7,16 +7,16 @@ Git gyorstalpaló: https://github.com/CsharptutorialHungary/csharpkurzus-25-1/tr
 Írj egy tetszőleges témájú programot, ami megfelel az alábbi technológiai követelményeknek a tanultak alapján:
 
 **Nem kihagyható elemek:**
-* Legyen benne kivételkezelés (`try-catch`)
-* Legalább a képenyőre írjon ki hibaüzeneteket
+* DONE  - Legyen benne kivételkezelés (`try-catch`)
+* DONE  - Legalább a képenyőre írjon ki hibaüzeneteket
 
 **Kötelezelő elemek** - Ezek közül egy kihagyható vagy cserélhető, ha Unit és/vagy Integration tesztek tartoznak a projekthez:
 
-* adat olvasása fájlból szerializáció segítségével (pl.: Adat betöltés és/vagy mentés JSON/XML fájlból/fájlba)
-* legyen benne saját immutable type (pl.: `record class`)
-* legyen benne LINQ segítségével: szűrés (`where`), csoportosítás (`group by`), rendezés (`order by`), agregáció (Pl.: `Min()`, `Max()`, `First()`, `FirstOrDefault`, `Average()`, stb...) közül legalább kettő
-* legyen benne generikus kollekció (pl.: `List<T>`, `Stack<T>`, stb...)
-* legyen benne aszinkron rész (`async` és `Task`)
+* TODO  - adat olvasása fájlból szerializáció segítségével (pl.: Adat betöltés és/vagy mentés JSON/XML fájlból/fájlba)
+* DONE  - legyen benne saját immutable type (pl.: `record class`)
+* DONE? - legyen benne LINQ segítségével: szűrés (`where`), csoportosítás (`group by`), rendezés (`order by`), agregáció (Pl.: `Min()`, `Max()`, `First()`, `FirstOrDefault`, `Average()`, stb...) közül legalább kettő
+* DONE  - legyen benne generikus kollekció (pl.: `List<T>`, `Stack<T>`, stb...)
+* TODO  - legyen benne aszinkron rész (`async` és `Task`)
 
 ## Technikai követelmények
 

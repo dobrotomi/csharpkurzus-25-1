@@ -14,6 +14,7 @@ internal class HelpCommand : ICommand
 
     public string Description => "Parancsok listázása.";
 
+
     public void Run(string[] args)
     {
         CommandHelper commandHelper = new();
@@ -21,7 +22,7 @@ internal class HelpCommand : ICommand
 
         foreach (ICommand commandInstance in commandInstances)
         {
-            Console.WriteLine($" - {commandInstance.Name} -> {commandInstance.Description}");
+            Console.WriteLine($" - [{commandInstance.Name}] -> {commandInstance.Description}");
         }
     }
 }
