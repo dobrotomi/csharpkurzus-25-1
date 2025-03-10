@@ -12,11 +12,11 @@ Git gyorstalpaló: https://github.com/CsharptutorialHungary/csharpkurzus-25-1/tr
 
 **Kötelezelő elemek** - Ezek közül egy kihagyható vagy cserélhető, ha Unit és/vagy Integration tesztek tartoznak a projekthez:
 
-* TODO  - adat olvasása fájlból szerializáció segítségével (pl.: Adat betöltés és/vagy mentés JSON/XML fájlból/fájlba)
+* DONE  - adat olvasása fájlból szerializáció segítségével (pl.: Adat betöltés és/vagy mentés JSON/XML fájlból/fájlba)
 * DONE  - legyen benne saját immutable type (pl.: `record class`)
-* DONE? - legyen benne LINQ segítségével: szűrés (`where`), csoportosítás (`group by`), rendezés (`order by`), agregáció (Pl.: `Min()`, `Max()`, `First()`, `FirstOrDefault`, `Average()`, stb...) közül legalább kettő
+* DONE  - legyen benne LINQ segítségével: szűrés (`where`), csoportosítás (`group by`), rendezés (`order by`), agregáció (Pl.: `Min()`, `Max()`, `First()`, `FirstOrDefault`, `Average()`, stb...) közül legalább kettő
 * DONE  - legyen benne generikus kollekció (pl.: `List<T>`, `Stack<T>`, stb...)
-* TODO  - legyen benne aszinkron rész (`async` és `Task`)
+* DONE  - legyen benne aszinkron rész (`async` és `Task`)
 
 ## Technikai követelmények
 
