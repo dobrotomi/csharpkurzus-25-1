@@ -8,11 +8,11 @@ using X6Z71T.Helper;
 using X6Z71T.Tasks;
 
 namespace X6Z71T.Commands;
-internal class SaveTasksCommand : ICommand
+internal sealed class SaveTasksCommand : ICommand
 {
     public string Name => "save";
 
-    public string Description => "Feladatok mentése.";
+    public string Description => "Feladatok mentése. <save>";
 
     public async void Run(string[] args)
     {

@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 using X6Z71T.Helper;
 
 namespace X6Z71T.Commands;
-internal class HelpCommand : ICommand
+internal sealed class HelpCommand : ICommand
 {
     public string Name => "help";
 
-    public string Description => "Parancsok listázása.";
+    public string Description => "Parancsok listázása. <help>";
 
 
     public void Run(string[] args)

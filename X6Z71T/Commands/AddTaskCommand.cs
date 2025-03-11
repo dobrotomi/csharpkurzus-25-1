@@ -1,11 +1,11 @@
 ﻿using X6Z71T.Tasks;
 
 namespace X6Z71T.Commands;
-internal class AddTaskCommand : ICommand
+internal sealed class AddTaskCommand : ICommand
 {
     public string Name => "add";
 
-    public string Description => "Feladat hozzáadása.";
+    public string Description => "Feladat hozzáadása. <add>";
 
 
     public void Run(string[] args)

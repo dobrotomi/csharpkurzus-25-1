@@ -7,15 +7,22 @@ using System.Threading.Tasks;
 using X6Z71T.Tasks;
 
 namespace X6Z71T.Commands;
-internal class ComplateTaskCommand : ICommand
+internal sealed class CompleteTaskCommand : ICommand
 {
-    public string Name => "complate";
+    public string Name => "complete";
 
-    public string Description => "Feladat teljesítése.";
+    public string Description => "Feladat teljesítése. <complete 'id'>";
 
 
     public void Run(string[] args)
     {
+
+        if (args.Length < 2)
+        {
+            Console.WriteLine("Hibás paraméterek! Használd a 'help' parancsot a parancsok listázásához.");
+            return;
+        }
+
         var taskManager = TaskManager.Instance;
 
         if (int.TryParse(args[1], out int id))
@@ -31,7 +38,7 @@ internal class ComplateTaskCommand : ICommand
         }
         else
         {
-            Console.WriteLine("Hibás paraméterek!");
+            Console.WriteLine("Hibás paraméterek! Használd a 'help' parancsot a parancsok listázásához.");
         }
     }
 }

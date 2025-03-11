@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 using X6Z71T.Tasks;
 
 namespace X6Z71T.Commands;
-internal class ListTasksCommand : ICommand
+internal sealed class ListTasksCommand : ICommand
 {
     public string Name => "list";
 
-    public string Description => "Feladatok listázása.";
+    public string Description => "Feladatok listázása. <list>";
 
 
     public void Run(string[] args)

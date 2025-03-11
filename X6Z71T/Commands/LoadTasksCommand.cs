@@ -8,11 +8,11 @@ using X6Z71T.Helper;
 using X6Z71T.Tasks;
 
 namespace X6Z71T.Commands;
-internal class LoadTasksCommand : ICommand
+internal sealed class LoadTasksCommand : ICommand
 {
     public string Name => "load";
 
-    public string Description => "Feladatok betöltése.";
+    public string Description => "Feladatok betöltése. <load>";
 
     public async void Run(string[] args)
     {
@@ -23,7 +23,22 @@ internal class LoadTasksCommand : ICommand
         ListSaveFiles(savesFolder);
 
         Console.WriteLine("Melyik mentést szeretnéd betölteni?");
-        int index = int.Parse(Console.ReadLine());
+        int index;
+        while (true)
+        {
+            var res = Console.ReadLine();
+            if (int.TryParse(res, out int result))
+            {
+                index = result;
+                break;
+            }
+            else
+            {
+                Console.WriteLine("Hibás bemenet! Kérlek adj meg egy számot!");
+            }
+        }
+
+
 
         string[] files = Directory.GetFiles(savesFolder, "*_save.json")
                                   .OrderByDescending(File.GetCreationTime)
