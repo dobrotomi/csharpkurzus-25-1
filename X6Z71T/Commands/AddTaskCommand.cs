@@ -41,9 +41,14 @@ internal sealed class AddTaskCommand : ICommand
             break;
         }
 
-        var newTask = X6Z71T.Tasks.TaskFactory.CreateTask(title, description);
+        TaskItem task = new()
+        {
+            Title = title,
+            Description = description,
+            IsCompleted = false
+        };
 
-        taskManager.AddTask(newTask);
+        taskManager.AddTask(task);
 
         Console.WriteLine("Feladat hozzáadva.");
     }
