@@ -16,7 +16,7 @@ internal sealed class ListTasksCommand : ICommand
 
     public void Run(string[] args)
     {
-        var taskManager = TaskManager.Instance;
+        var taskManager = TaskManager.GetInstance();
 
         var tasks = taskManager.GetTasks().ToList();
 

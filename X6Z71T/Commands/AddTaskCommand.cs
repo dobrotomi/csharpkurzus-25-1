@@ -10,7 +10,7 @@ internal sealed class AddTaskCommand : ICommand
 
     public void Run(string[] args)
     {
-        var taskManager = TaskManager.Instance;
+        var taskManager = TaskManager.GetInstance();
         string title = "";
         string description = "";
         while (true)

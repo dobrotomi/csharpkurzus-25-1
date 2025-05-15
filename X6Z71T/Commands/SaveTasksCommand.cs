@@ -16,7 +16,7 @@ internal sealed class SaveTasksCommand : ICommand
 
     public async void Run(string[] args)
     {
-        var taskManager = TaskManager.Instance;
+        var taskManager = TaskManager.GetInstance();
 
         string savesFolder = Path.Combine(Directory.GetCurrentDirectory(), "saves");
         Directory.CreateDirectory(savesFolder);

@@ -8,10 +8,14 @@ namespace X6Z71T.Tasks;
 internal class TaskManager : ITaskManager
 {
     private static readonly Lazy<TaskManager> _instance = new(() => new TaskManager());
-    public static TaskManager Instance => _instance.Value;
+    private static TaskManager Instance => _instance.Value;
     private List<TaskItem> _tasks = [];
     private int _id = 1;
     private TaskManager() { }
+    public static TaskManager GetInstance()
+    {
+        return Instance;
+    }
     public void AddTask(TaskItem task)
     {
         _tasks.Add(task with { Id = _id++ });

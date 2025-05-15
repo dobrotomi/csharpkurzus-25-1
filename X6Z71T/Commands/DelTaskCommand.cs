@@ -22,7 +22,7 @@ internal sealed class DelTaskCommand : ICommand
             return;
         }
 
-        var taskManager = TaskManager.Instance;
+        var taskManager = TaskManager.GetInstance();
 
         if (int.TryParse(args[1], out int id))
         {

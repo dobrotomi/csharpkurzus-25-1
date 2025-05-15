@@ -15,7 +15,7 @@ internal sealed class StatsCommand : ICommand
 
     public void Run(string[] args)
     {
-        var taskManager = TaskManager.Instance;
+        var taskManager = TaskManager.GetInstance();
 
         var tasks = taskManager.GetTasks().ToList();
 

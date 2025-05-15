@@ -56,7 +56,7 @@ internal sealed class LoadTasksCommand : ICommand
         await using (FileStream fs = new FileStream(selectedFile, FileMode.Open, FileAccess.Read))
         {
             List<TaskItem>? tasks = FileLoader.DeserializeFromJson(fs);
-            var taskManager = TaskManager.Instance;
+            var taskManager = TaskManager.GetInstance();
             if(tasks == null)
             {
                 Console.WriteLine("Nem találhatóak feladatok!");
